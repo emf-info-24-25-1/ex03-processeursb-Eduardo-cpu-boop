@@ -16,7 +16,7 @@ public class Processeur {
 
     /**
      * La méthode main() de l'application, là où tout commence mais... tout se finit-il bien là ?
-     *
+     *--
      * @param args les arguments du programme passés sur la ligne de commande
      */
     public static void main(String[] args ) {
