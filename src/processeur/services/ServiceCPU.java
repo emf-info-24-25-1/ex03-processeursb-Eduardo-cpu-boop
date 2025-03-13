@@ -51,9 +51,10 @@ public class ServiceCPU {
     public boolean ajouterUnNouveau(CPU cpu) {
         boolean ajoutReussi = false;
         for (int i = 0; i < cpus.length; i++) {
-            if (cpus[i] != null) {
+            if (cpus[i] == null) {
                 cpus[i] = cpu;
                 ajoutReussi = true;
+                break;
             }
         }
         return ajoutReussi;
@@ -65,7 +66,7 @@ public class ServiceCPU {
      * @return la liste des CPUs
      */
     public CPU[] obtenirLaListe() {
-        
+         return this.cpus;
     }
 
     /**
@@ -75,7 +76,14 @@ public class ServiceCPU {
      * @return le nombre de CPUs contenus dans notre liste
      */
     public int nombreDeCPUDansLaListe() {
-        // VOTRE CODE ICI...
+        int count =0;
+        for(CPU cpu : cpus){
+            if (cpu != null){
+                count++;
+            }
+        }
+        return count;
+
     }
 
     /**
@@ -86,7 +94,7 @@ public class ServiceCPU {
      * @return la taille de la liste de CPU
      */
     public int tailleDeLaListe() {
-        // VOTRE CODE ICI...
+        return cpus.length;
     }
 
     /**
@@ -98,7 +106,11 @@ public class ServiceCPU {
      *         limites du tableau
      */
     public CPU obtenirUnElement(int indice) {
-        // VOTRE CODE ICI...
+        if (indice >= 0 && indice < cpus.length) {
+            return cpus[indice];
+        }else {
+            return null;
+        }
     }
 
     /**
